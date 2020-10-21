@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useCallback} from 'react';
 import './App.css';
+import Launch from './components/launch';
+import LaunchDetails from './components/launchDetails';
 
 function App() {
+  const [id, setId] = useState(42);
+  const handleIdChange = useCallback( (newId) => {
+      setId(newId)
+    }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Launch handleIdChange={handleIdChange}/>
+      <LaunchDetails id={id}/>
     </div>
   );
 }
