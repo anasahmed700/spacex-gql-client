@@ -11,6 +11,7 @@ const LaunchDetailsContainer = ({ id }: OwnProps) => {
 
   useEffect(() => {
     refetch()
+    // eslint-disable-next-line
   }, [id])
 
   if (loading){

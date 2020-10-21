@@ -9,7 +9,7 @@ interface Props extends OwnProps {
   data: LaunchesQuery;
 }
 
-const className = 'Launch';
+// const className = 'Launch';
 
 const Launch: React.FC<Props> = ({ data, handleIdChange }) => (
   <div className="Launches">
